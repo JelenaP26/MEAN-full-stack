@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "66c23c3c89484e46d03cbd20"
+  },
+  "id": 1,
+  "naziv": "Zeleni horizont",
+  "adresa": "Solunska 23",
+  "usluge": [
+    {
+      "naziv": "održavanje vodenih površina",
+      "cena": 10000
+    },
+    {
+      "naziv": "održavanje travnatih podloga",
+      "cena": 10000
+    },
+    {
+      "naziv": "sađenje cveća",
+      "cena": 5000
+    },
+    {
+      "naziv": "pranje pod pritiskom",
+      "cena": 8000
+    }
+  ],
+  "dekorateri": [
+    {
+      "korisnickoIme": "tejka",
+      "ime": "Teodora",
+      "prezime": "Boskovic",
+      "angazovan": false
+    },
+    {
+      "korisnickoIme": "dekorater1",
+      "ime": "Dekorater",
+      "prezime": "1",
+      "angazovan": true
+    }
+  ],
+  "telefon": "0601234123",
+  "komentari": [
+    {
+      "tekst": "Komentar 1",
+      "ocena": 4
+    },
+    {
+      "tekst": "Komentar 2",
+      "ocena": 5
+    },
+    {
+      "tekst": "Komentar 3",
+      "ocena": 0
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66c23e9989484e46d03cbd27"
+  },
+  "id": 2,
+  "naziv": "Nešto zeleno",
+  "adresa": "Mike Alasa 48",
+  "usluge": [
+    {
+      "naziv": "održavanje vodenih površina",
+      "cena": 10000
+    },
+    {
+      "naziv": "održavanje travnatih podloga",
+      "cena": 10000
+    },
+    {
+      "naziv": "sađenje cveća",
+      "cena": 5000
+    },
+    {
+      "naziv": "pranje pod pritiskom",
+      "cena": 8000
+    }
+  ],
+  "dekorateri": [
+    {
+      "korisnickoIme": "ivko",
+      "ime": "Marko",
+      "prezime": "Ivković",
+      "angazovan": true
+    },
+    {
+      "korisnickoIme": "dekorater1",
+      "ime": "Dekorater",
+      "prezime": "1",
+      "angazovan": false
+    }
+  ],
+  "telefon": "0641231234",
+  "komentari": [
+    {
+      "tekst": "Komentar 1",
+      "ocena": 5
+    },
+    {
+      "tekst": "Komentar 2",
+      "ocena": 4
+    },
+    {
+      "tekst": "Komentar 3",
+      "ocena": 5
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66f19b6aafc23178803ecc0c"
+  },
+  "id": 3,
+  "naziv": "Nova Firma",
+  "adresa": "Mike Alasa 48",
+  "usluge": [],
+  "dekorateri": [
+    {
+      "korisnickoIme": "tejka",
+      "ime": "Teodora",
+      "prezime": "Bošković",
+      "angazovan": false
+    },
+    {
+      "korisnickoIme": "kor2",
+      "ime": "Korisnik",
+      "prezime": "2",
+      "angazovan": false
+    }
+  ],
+  "telefon": "0606012601",
+  "komentari": [],
+  "__v": 0
+}]
