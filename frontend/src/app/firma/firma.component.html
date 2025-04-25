@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma</title>
+    <link rel="stylesheet" href="firma.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a routerLink="/vlasnikFirme" class="back-link">
+                <span class="arrow"></span>
+                <h4>Vrati se na prethodnu stranicu</h4>
+            </a>
+            <h1>Detaljne informacije firme {{firma.naziv}}</h1>
+            <nav class="main-nav">
+                <button class="btn-edit" (click)="logout()">Izloguj se</button>
+              </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="firm-section info">
+            <div class="container">
+                <h2><u>O nama</u></h2>
+                <div class="info-content">
+                    <p><strong>Naziv: </strong> <span id="nazov">{{firma.naziv}}</span></p>
+                    <p><strong>Adresa: </strong> <span id="adresa">{{firma.adresa}}</span></p>
+                    <p><strong>Usluge i cenovnik: </strong> 
+                        <span id="usluge" *ngFor="let u of firma.usluge">
+                            <ul>
+                                <li>{{u.naziv}} {{u.cena}}</li>
+                            </ul>
+                        </span>
+                    </p>
+                    <p><strong>Telefon: </strong> <span id="email">{{firma.telefon}}</span></p>
+                    <p><strong>Komentari: </strong> 
+                        <span id="komentari" *ngFor="let k of firma.komentari">
+                            <ul>
+                                <li>{{k.tekst}}</li>
+                            </ul>
+                        </span>
+                    </p>
+                  </div>
+            </div>
+        </section>
+
+        <section class="firm-section booking">
+            <div class="container">
+                <h2>Forma za zakazivanje bašte</h2>
+                <div class="steps-container">
+                    <div class="step active" id="step1">
+                        <h3>KORAK 1:</h3>
+                        <form id="form1">
+                            <label for="datumVreme">Izaberite datum i vreme: </label>
+                            <br><br>
+                            <input type="datetime-local" id="datumVreme" [(ngModel)]="datumVreme" name="datumVreme" required>
+                            <br><br>
+                            <label for="ukupnaKvadratura">Unesite ukupnu kvadraturu bašte: </label>
+                            <br><br>
+                            <input type="number" name="ukupnaKvadratura" [(ngModel)]="ukupnaKvadratura" required>
+                            <br><br>
+                            <label for="tipBaste">Privatna bašta ili restoran: </label>
+                            <br><br>
+                            <input type="radio" name="tipBaste" [(ngModel)]="tipBaste" value="privatna"> privatna bašta
+                            <input type="radio" name="tipBaste" [(ngModel)]="tipBaste" value="restoran"> bašta restorana
+                            <br><br>
+                        </form>
+                    </div>
+
+                    <div class="step" id="step2">
+                        <h3>KORAK 2:</h3>
+                        <form id="form2">
+                            <div [hidden]="tipBaste == 'restoran'">
+                                <h4>Unesite ste vlasnik privatne bašte: </h4>
+                                <label for="bazenKvadratura">Kvadratura bašte koja će biti pod bazenom: </label>
+                                <input type="number" name="bazenKvadratura" [(ngModel)]="bazenKvadratura">
+                                <br><br>
+                                <label for="bazenBroj">Unesite broj bazena: </label>
+                                <input type="number" name="bazenBroj" [(ngModel)]="bazenBroj">
+                                <br><br>
+                                <label for="zeleniloKvadraturaP">Kvadratura bašte koja će biti pod zelenilom: </label>
+                                <input type="number" name="zeleniloKvadraturaP" [(ngModel)]="zeleniloKvadraturaP">
+                                <br><br>
+                                <label for="lezaljkeKvadratura">Kvadratura bašte koja će biti opremljena ležaljkama i stolovima: </label>
+                                <br><br>
+                                <input type="number" name="lezaljkeKvadratura" [(ngModel)]="lezaljkeKvadratura">
+                                <br><br>
+                            </div>
+                            <div [hidden]="tipBaste == 'privatna'">
+                                <h4>Ukoliko ste vlasnik bašte restorana: </h4>
+                                <label for="fontanaKvadratura">Kvadratura bašte koja će biti opremljena fontanom: </label>
+                                <input type="number" name="fontanaKvadratura" [(ngModel)]="fontanaKvadratura">
+                                <br><br>
+                                <label for="fontanaBroj">Unesite broj fontana: </label>
+                                <input type="number" name="fontanaBroj" [(ngModel)]="fontanaBroj">
+                                <br><br>
+                                <label for="zeleniloKvadraturaR">Kvadratura bašte koja će biti pod zelenilom: </label>
+                                <input type="number" name="zeleniloKvadraturaR" [(ngModel)]="zeleniloKvadraturaR">
+                                <br><br>
+                                <label for="brStolicaStolova">Broj stolova i stolica u preostalom prostoru bašte: </label>
+                                <input type="number" name="brStolicaStolova" [(ngModel)]="brStolicaStolova">
+                            <br><br>
+                            </div>
+                            <h4>Ukoliko imate dodatne zahteve, ovde ih unesite: </h4>
+                            <textarea name="dodatniZahtevi" [(ngModel)]="dodatniZahtevi"></textarea>
+                            <br><br>
+                            <h4>Usluge koje firma nudi: </h4>
+                            <p *ngFor="let u of firma.usluge">
+                                <input type="checkbox" [(ngModel)]="u.checked" name="check">{{u.naziv}}
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- <div class="step" id="step3">
+                        <h3>KORAK 3: Odabir Termina</h3>
+                        <form id="form3">
+                            <label for="date">Datum:</label>
+                            <input type="date" id="date" name="date" required><br><br>
+                            <label for="time">Vreme:</label>
+                            <input type="time" id="time" name="time" required><br><br>
+                        </form>
+                    </div> -->
+
+                    <div class="step" id="step3">
+                        <h3>KORAK 3: Pregled i potvrda</h3>
+                        <h4>Pregledajte unete informacije i potvrdite zakazivanje.</h4>
+                        <label for="datumVreme">Datum i vreme: </label>{{this.datumVremePrikaz}}
+                        <br><br>
+                        <label for="ukupnaKvadratura">Ukupnu kvadraturu bašte: </label>{{this.ukupnaKvadratura}}
+                        <br><br>
+                        <label for="tipBaste">Privatna bašta ili restoran: </label>{{this.tipBaste}}
+                        <br><br>
+                        <div [hidden]="tipBaste == 'restoran'">
+                            <label for="bazenKvadratura">Kvadratura bašte koja će biti pod bazenom: </label>{{this.bazenKvadratura}}
+                            <br><br>
+                            <label for="zeleniloKvadraturaP">Kvadratura bašte koja će biti pod zelenilom: </label>{{this.zeleniloKvadraturaP}}
+                            <br><br>
+                            <label for="lezaljkeKvadratura">Kvadratura bašte koja će biti opremljena ležaljkama i stolovima: </label>{{this.lezaljkeKvadratura}}
+                            <br><br>
+                        </div>
+                        <div [hidden]="tipBaste == 'privatna'">
+                            <label for="fontanaKvadratura">Kvadratura bašte koja će biti opremljena fontanom: </label>{{this.fontanaKvadratura}}
+                            <br><br>
+                            <label for="zeleniloKvadraturaR">Kvadratura bašte koja će biti pod zelenilom: </label>{{this.zeleniloKvadraturaR}}
+                            <br><br>
+                            <label for="brStolicaStolova">Broj stolova i stolica u preostalom prostoru bašte: </label>{{this.brStolicaStolova}}
+                            <br><br>
+                        </div>
+                        <label for="dodatniZahtevi" [hidden]="dodatniZahtevi == ''">Dodatni zahtevi: </label>{{this.dodatniZahtevi}}
+                        <br><br>
+                        <label>Izabrane usluge: </label>
+                        <p *ngFor="let u of izabraneUsluge">
+                            {{u.naziv}}
+                        </p>
+                        <br><br>
+                        <div class="steps-nav"><button (click)="potvrdi()">Potvrdi</button></div>
+                        <!-- <br> -->
+                        <p class="error">{{this.error}}</p>
+                    </div>
+
+                    <!-- Navigacija između koraka -->
+                    <div class="steps-nav">
+                        <button (click)="changeStep(-1)">Prethodni</button>
+                        <button (click)="changeStep(1)">Naredni</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vaša mašta - vaša bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

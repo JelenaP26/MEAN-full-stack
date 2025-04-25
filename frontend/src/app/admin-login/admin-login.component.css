@@ -1,0 +1,120 @@
+/* styles.css */
+
+/* Opšti stilovi */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4; /* Svetla pozadina */
+}
+
+/* Header stilovi */
+.header {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Sekcija za admin prijavu */
+.admin-login-section {
+    background-color: #e0f0e0; /* Svetla pastelna zelena */
+    padding: 40px 0;
+}
+
+.admin-login-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-section h4 {
+    text-align: center;
+    color: #2e5d2f;
+}
+
+.admin-login-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-login-section label {
+    font-weight: bold;
+}
+
+.admin-login-section input[type="text"],
+.admin-login-section input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-login-section button {
+    background-color: #2e5d2f; /* Tamnija zelena */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.admin-login-section button:hover {
+    background-color: #1d4d1a; /* Još tamnija zelena za hover */
+}
+
+.admin-login-section .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer stilovi */
+.footer {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+    color: #854992;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.back-link .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid #854992; /* Strelica pokazuje ulevo */
+    margin-right: 5px;
+}
+
+.back-link h4 {
+    margin: 0;
+    font-size: 14px;
+}

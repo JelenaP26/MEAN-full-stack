@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Login</title>
+    <link rel="stylesheet" href="admin-login.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a routerLink="" class="back-link">
+                <span class="arrow"></span>
+                <h4>Vrati se na početnu stranicu</h4>
+            </a>
+            <h1>Administrator Pristup</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="admin-login-section">
+            <div class="container">
+                <h4>Dobro došli, ulogujte se kao administrator:</h4>
+                <form>
+                    <label for="korisnickoIme">Korisničko ime:</label>
+                    <input type="text" name="korisnickoIme" [(ngModel)]="korisnickoIme" placeholder="Unesite korisničko ime">
+                    <br>
+                    <label for="lozinka">Lozinka:</label>
+                    <input type="password" name="lozinka" [(ngModel)]="lozinka" placeholder="Unesite lozinku">
+                    <br>
+                    <button type="button" (click)="login()">Uloguj se</button>
+                </form>
+                <hr>
+                <div class="error">{{error}}</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vaša mašta - vaša bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

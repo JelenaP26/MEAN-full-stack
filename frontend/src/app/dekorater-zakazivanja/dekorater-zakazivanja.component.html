@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="dekorater-zakazivanja.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a routerLink="/dekorater">Profil</a>
+      <a routerLink="/dekoraterZakazivanja"><u>Zakazivanja</u></a>
+      <a routerLink="/dekoraterOdrzavanja">Održavanja</a>
+      <a routerLink="/dekoraterStatistika">Statistika</a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section id="firme" class="section-content">
+      <div class="table-container">
+        <h2>Firma - {{firma.naziv}}</h2>
+        <table>
+          <tr>
+              <th>Datum i vreme zakazivanja</th>
+              <th>Datum i vreme izrade</th>
+              <!-- <th>Datum i vreme završetka</th> -->
+              <th>Tip bašte</th>
+              <th>Ukupna kvadratura</th>
+              <th>Izabrane usluge</th>
+              <th>Dodatni zahtevi</th>
+              <th>Potvrdi</th>
+              <th>Odbij</th>
+              <th>Obrazloženje</th>
+          </tr>
+          <tr *ngFor="let z of zakazivanja">
+            <td>{{z.datumVremeZakazivanja}}</td>
+            <td>{{z.datumVremeIzrade}}</td>
+            <!-- <td>{{z.datumVremeZavrsetka}}</td> -->
+            <td>{{z.tipBaste}}</td>
+            <td>{{z.ukupnaKvadratura}}</td>
+            <td>
+              <ul>
+                <li *ngFor="let u of z.izabraneUsluge">{{u}}</li>
+              </ul>
+            </td>
+            <td>{{z.dodatniZahtevi}}</td>
+            <td  class="accept-deny">
+              <button (click)="accept(z)">Potvrdi</button>
+            </td>
+            <!-- <td [hidden]="z.status != 'prihvacen'">prihvacen</td> -->
+            <td class="accept-deny">
+              <button (click)="deny(z)">Odbij</button>
+            </td>
+            <!-- <td [hidden]="z.status != 'odbijen'">odbijen</td> -->
+            <td>
+              <input type="text" name="obrazlozenje" [(ngModel)]="z.obrazlozenje" placeholder="Odbijenica">
+            </td>
+          </tr>
+        </table>
+        <p class="error">{{this.error}}</p>
+      </div>
+    </section>
+
+    <section id="zakazivanja" class="section-content">
+      <div class="table-container">
+        <h2>Završi poslove</h2>
+        <table>
+          <tr>
+              <th>Datum i vreme zakazivanja</th>
+              <th>Datum i vreme izrade</th>
+              <!-- <th>Datum i vreme završetka</th> -->
+              <th>Tip bašte</th>
+              <th>Ukupna kvadratura</th>
+              <th>Izabrane usluge</th>
+              <th>Dodatni zahtevi</th>
+              <th></th>
+              <!-- <th>Potvrdi</th> -->
+              <!-- <th>Odbij</th> -->
+              <!-- <th>Obrazloženje</th> -->
+          </tr>
+          <tr *ngFor="let z of potvrdjeniPoslovi">
+            <td>{{z.datumVremeZakazivanja}}</td>
+            <td>{{z.datumVremeIzrade}}</td>
+            <!-- <td>{{z.datumVremeZavrsetka}}</td> -->
+            <td>{{z.tipBaste}}</td>
+            <td>{{z.ukupnaKvadratura}}</td>
+            <td>
+              <ul>
+                <li *ngFor="let u of z.izabraneUsluge">{{u}}</li>
+              </ul>
+            </td>
+            <td>{{z.dodatniZahtevi}}</td>
+            <td  class="accept-deny">
+              <button (click)="finish(z)">Završi posao</button>
+            </td>
+          </tr>
+        </table>
+        <p class="error">{{this.error}}</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

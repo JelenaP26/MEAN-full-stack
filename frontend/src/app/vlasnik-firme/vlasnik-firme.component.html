@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="vlasnik-firme.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="#profil" routerLink="/vlasnik">Profil</a>
+      <a href="#firme" routerLink="/vlasnikFirme"><u>Firme</u></a>
+      <a href="#zakazivanja" routerLink="/vlasnikZakazivanja">Zakazivanja</a>
+      <a href="#odrzavanje" routerLink="/vlasnikOdrzavanje">Održavanje</a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+  <main>
+    
+    <section id="firme" class="section-content">
+      <!-- <div class="content-container"> -->
+        <div class="table-container">
+          <h2>Firme</h2>
+          <table>
+            <tr>
+                <th>Naziv</th>
+                <th>Adresa</th>
+                <th>Angažovani dekorateri</th>
+                <th>Prosečna ocena</th>
+            </tr>
+            <tr *ngFor="let f of firme">
+                <td><a routerLink="/firma" (click)="firmDetails(f)">{{f.naziv}}</a></td>
+                <td>{{f.adresa}}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let d of f.dekorateri" [hidden]="d.angazovan != true">{{d.ime}} {{d.prezime}}</li>
+                    </ul>
+                </td>
+                <td>{{rating(f)}}</td>
+            </tr>
+          </table>
+      </div>
+
+      <div class="search-container">
+        <h3>Pretraži i sortiraj</h3>
+        <button (click)="sortByNameAsc()">Sortiraj neopadajuće po nazivu</button>
+        <br>
+        <button (click)="sortByAddrAsc()">Sortiraj neopadajuće po adresi</button>
+        <br>
+        <button (click)="sortByNameDesc()">Sortiraj nerastuće po nazivu</button>
+        <br>
+        <button (click)="sortByAddrDesc()">Sortiraj nerastuće po adresi</button>
+        <br>
+        <label for="search">Unesi naziv firme i/ili adresu: </label>
+        <input type="text" name="search" [(ngModel)]="searchByName" placeholder="Unesi naziv firme:">
+        <!-- <br> -->
+        <input type="text" name="search" [(ngModel)]="searchByAddr" placeholder="Unesi adresu firme:">
+        <br>
+        <button (click)="searchFirm()">Pretraži</button>
+        <br>
+        <button (click)="ngOnInit()">Prikaži opet sve firme</button>
+        <br>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="vlasnik-zakazivanja.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="#profil" routerLink="/vlasnik">Profil</a>
+      <a href="#firme" routerLink="/vlasnikFirme">Firme</a>
+      <a href="#zakazivanja" routerLink="/vlasnikZakazivanja"><u>Zakazivanja</u></a>
+      <a href="#odrzavanje" routerLink="/vlasnikOdrzavanje">Održavanje</a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+
+  <main>
+    
+
+    <section id="firme" class="section-content">
+      <div class="table-container">
+        <h2>Trenutna zakazivanja</h2>
+        <table>
+          <tr>
+              <th>Datum zakazivanja</th>
+              <th>Datum izrade posla</th>
+              <th>Naziv firme</th>
+              <th>Tražene usluge</th>
+          </tr>
+          <tr *ngFor="let z of zakazivanja">
+              <td>{{z.datumVremeZakazivanja}}</td>
+              <td>{{z.datumVremeIzrade}}</td>
+              <td>{{z.firma}}</td>
+              <td>
+                  <ul>
+                      <li *ngFor="let u of z.izabraneUsluge">{{u}}</li>
+                  </ul>
+              </td>
+          </tr>
+        </table>
+    </div>
+    </section>
+
+    <section id="zakazivanja" class="archive-content">   
+      <div class="table-container">
+        <h2>Arhiva - prethodna zakazivanja</h2>
+        <table>
+          <tr>
+              <th>Datum izrade</th>
+              <th>Naziv firme</th>
+              <th>Tražene usluge</th>
+              <th>Komentar (opciono)</th>
+              <th>Ocena (opciono)</th>
+              <!-- <th></th> -->
+          </tr>
+          <tr *ngFor="let a of arhiva">
+              <td>{{a.datumVremeIzrade}}</td>
+              <td>{{a.firma}}</td>
+              <td>
+                  <ul>
+                      <li *ngFor="let u of a.izabraneUsluge">{{u}}</li>
+                  </ul>
+              </td>
+              <td>{{a.komentar}}</td>
+              <td>{{a.ocena}}</td>
+              <td [hidden]="a.komentar != '' || a.ocena != 0" class="comment-rate">
+                <button (click)="addCommentRate()">Dodaj komentar i ocenu</button>
+              </td>
+          </tr>
+        </table>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

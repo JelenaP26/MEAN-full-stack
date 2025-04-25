@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="vlasnik-odrzavanje.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="#profil" routerLink="/vlasnik">Profil</a>
+      <a href="#firme" routerLink="/vlasnikFirme">Firme</a>
+      <a href="#zakazivanja" routerLink="/vlasnikZakazivanja">Zakazivanja</a>
+      <a href="#odrzavanje" routerLink="/vlasnikOdrzavanje"><u>Održavanje</u></a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+
+  <main>
+    
+
+    <section id="firme" class="section-content">
+      <div class="table-container">
+        <h2>Završeni poslovi</h2>
+        <table>
+          <tr>
+              <th>Datum završetka posla</th>
+              <th>Broj bazena</th>
+              <th>Broj fontana</th>
+              <th>Unesi datum i vreme termina</th>
+              <th></th>
+          </tr>
+          <tr *ngFor="let a of arhiva">
+              <td>{{a.datumVremeZavrsetka}}</td>
+              <td>{{a.bazenBroj}}</td>
+              <td>{{a.fontanaBroj}}</td>
+              <td>
+                <input type="datetime-local" [(ngModel)]="a.datumVreme" required [disabled]="a.bazenBroj == 0 && a.fontanaBroj == 0">
+              </td>
+              <td  class="water-service" [hidden]="a.bazenBroj == 0 && a.fontanaBroj == 0">
+                <button (click)="waterService(a)">Zakaži održavanje vodenih površina</button>
+              </td>
+          </tr>
+        </table>
+        <p class="error">{{this.error}}</p>
+    </div>
+    </section>
+
+    <section id="zakazivanja" class="section-content">
+      <div class="table-container">
+        <h2>Vodene površine u procesu održavanja ili čekaju na majstora</h2>
+        <table>
+          <tr>
+              <th>Datum i vreme zakazivanja</th>
+              <th>Datum i vreme izrade</th>
+              <th>Tip bašte</th>
+              <th>Ukupna kvadratura</th>
+              <th></th>
+          </tr>
+          <tr *ngFor="let z of zakazivanja">
+              <td>{{z.datumVremeZakazivanja}}</td>
+              <td>{{z.datumVremeIzrade}}</td>
+              <td>{{z.tipBaste}}</td>
+              <td>{{z.ukupnaKvadratura}}</td>
+          </tr>
+        </table>
+        <p class="error">{{this.error}}</p>
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

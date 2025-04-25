@@ -1,0 +1,251 @@
+/* Opšti stilovi */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f9f4; /* Svetla pozadina */
+}
+
+/* Header stilovi */
+.header {
+  background-color: #c2d6c3; /* Pastelno zelena */
+  color: #2e5d2f; /* Tamnija zelena za tekst */
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.header p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+}
+
+/* Flex kontejner za raspoređivanje sekcija */
+.flex-container {
+  display: flex; /* Raspoređuje decu u red */
+  justify-content: space-between; /* Prostor između sekcija */
+  max-width: 1200px; /* Maksimalna širina */
+  margin: 20px auto; /* Centriranje */
+  min-height: 400px;
+}
+
+/* Stilovi za login sekciju */
+.login-section {
+  flex: 1; /* Prva sekcija zauzima jednaku širinu */
+  padding: 40px; /* Povećaj padding da zadržiš izgled */
+  background-color: #fff; /* Bele pozadine */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px; /* Razmak između sekcija */
+  min-height: 300px;
+}
+
+.login-section h2 {
+  text-align: center;
+  color: #2e5d2f;
+}
+
+
+.login-section h3 {
+  text-align: center;
+  color: #2e5d2f;
+}
+
+.login-section h4 {
+  text-align: center;
+  color: #2e5d2f;
+}
+
+.login-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-section label {
+  font-weight: bold;
+}
+
+/* Stilovi za inpute */
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Puni širinu */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.login-section button {
+  background-color: #2e5d2f; /* Tamnija zelena */
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.login-section button:hover {
+  background-color: #1d4d1a; /* Još tamnija zelena za hover */
+}
+
+.login-section a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #2e5d2f;
+  text-decoration: none;
+}
+
+.login-section a:hover {
+  text-decoration: underline;
+}
+
+/* Stilovi za sekciju informacija */
+.info-section {
+  flex: 1; /* Druga sekcija zauzima jednaku širinu */
+  padding: 40px;
+  background-color: #fff; /* Svetla pozadina */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+  text-align: center;
+  color: #2e5d2f;
+}
+
+.info {
+  flex: 1;
+}
+
+.info p {
+  margin: 0.5rem 0;
+}
+
+/* Stilovi za poruke o grešci */
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Footer stilovi */
+.footer {
+  background-color: #c2d6c3; /* Pastelno zelena */
+  color: #2e5d2f; /* Tamnija zelena za tekst */
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Opšti stilovi za tabelu */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Uklanja razmake između granica ćelija */
+  margin: 1rem 0; /* Dodaje marginu oko tabele */
+}
+
+/* Stil za zaglavlje tabele */
+th {
+  background-color: #c2d6c3; /* Pastelno zelena */
+  color: #2e5d2f; /* Tamnija zelena za tekst */
+  padding: 1rem;
+  text-align: left; /* Poravnava tekst levo */
+  border-bottom: 2px solid #2e5d2f; /* Dodaje donju granicu */
+}
+
+/* Stil za ćelije u tabeli */
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd; /* Dodaje donju granicu */
+}
+
+/* Stil za parne redove tabele */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Svetla siva boja za parne redove */
+}
+
+/* Stil za neparne redove tabele */
+tr:nth-child(odd) {
+  background-color: #ffffff; /* Bela boja za neparne redove */
+}
+
+/* Stil za redove tabele pri prelaženju mišem */
+tr:hover {
+  background-color: #e2e8e0; /* Svetla pastelna zelena za hover efekat */
+}
+
+/* Stil za listu unutar ćelije */
+td ul {
+  padding-left: 1rem; /* Dodaje levo odstojanje za listu */
+  margin: 0; /* Uklanja marginu oko liste */
+  list-style-type: none; /* Uklanja oznake (bullet points) sa liste */
+}
+
+/* Stil za stavke liste */
+td ul li {
+  padding: 0.5rem 0; /* Dodaje vertikalno odstojanje između stavki */
+}
+
+.section-content {
+  display: flex; /* Postavlja flexbox raspored */
+  justify-content: space-between; /* Raspoređuje prostor između elemenata */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.table-container {
+  flex: 3; /* Tabela zauzima većinu prostora */
+}
+
+.search-container {
+  flex: 1; /* Pretraga i sortiranje zauzimaju manje prostora */
+  margin-left: 2rem; /* Razmak između tabele i pretrage */
+}
+
+.search-container h3 {
+  margin-top: 0;
+}
+
+.search-container button {
+  background-color: #c2d6c3; /* Pastelno zelena */
+  color: #2e5d2f;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%; /* Da dugmići zauzmu punu širinu */
+}
+
+.search-container button:hover {
+  background-color: #45a049;
+}
+
+.search-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+

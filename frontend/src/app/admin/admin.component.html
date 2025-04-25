@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a routerLink="" class="back-link">
+                <span class="arrow"></span>
+                <h4>Vrati se na početnu stranicu</h4>
+            </a>
+            <h1>Dobro došli admine, {{ulogovan.ime}} {{ulogovan.prezime}}</h1>
+            <nav class="main-nav">
+                <button class="btn-edit" (click)="logout()">Izloguj se</button>
+              </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="section-content">
+              <div class="table-container">
+                <h2>Spisak svih vlasnika u sistemu</h2>
+                <table>
+                  <tr>
+                      <th>Korisničko ime</th>
+                      <th>Ime</th>
+                      <th>Prezime</th>
+                      <th>Adresa</th>
+                      <th>Telefon</th>
+                      <th>Email</th>
+                  </tr>
+                  <tr *ngFor="let v of vlasnici">
+                      <td>{{v.korisnickoIme}}</td>
+                      <td>{{v.ime}}</td>
+                      <td>{{v.prezime}}</td>
+                      <td>{{v.adresa}}</td>
+                      <td>{{v.telefon}}</td>
+                      <td>{{v.email}}</td>
+                  </tr>
+                </table>
+            </div>
+      
+          </section>
+
+          <section id="firme" class="section-content">
+            <!-- <div class="content-container"> -->
+              <div class="table-container">
+                <h2>Spisak svih dekoratera u sistemu</h2>
+                <table>
+                  <tr>
+                      <th>Korisničko ime</th>
+                      <th>Ime</th>
+                      <th>Prezime</th>
+                      <th>Adresa</th>
+                      <th>Telefon</th>
+                      <th>Email</th>
+                  </tr>
+                  <tr *ngFor="let v of dekorateri">
+                      <td>{{v.korisnickoIme}}</td>
+                      <td>{{v.ime}}</td>
+                      <td>{{v.prezime}}</td>
+                      <td>{{v.adresa}}</td>
+                      <td>{{v.telefon}}</td>
+                      <td>{{v.email}}</td>
+                  </tr>
+                </table>
+            </div>
+      
+          </section>
+
+          <section id="firme" class="section-content">
+            <!-- <div class="content-container"> -->
+              <div class="table-container">
+                <h2>Spisak svih firmi u sistemu</h2>
+                <table>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Adresa</th>
+                        <th>Usluge</th>
+                        <th>Dekorateri</th>
+                        <th>Telefom</th>
+                    </tr>
+                    <tr *ngFor="let f of firme">
+                        <td>{{f.naziv}}</td>
+                        <td>{{f.adresa}}</td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let u of f.usluge">{{u.naziv}} - {{u.cena}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let d of f.dekorateri">{{d.ime}} {{d.prezime}}</li>
+                            </ul>
+                        </td>
+                        <td>{{f.telefon}}</td>
+                    </tr>
+                  </table>
+            </div>
+          </section>
+
+          <section id="firme" class="section-content">
+            <!-- <div class="content-container"> -->
+              <div class="table-container">
+                <h2>Spisak svih korisnika koji čekaju na odobrenje</h2>
+                <table>
+                  <tr>
+                      <th>Korisničko ime</th>
+                      <th>Ime</th>
+                      <th>Prezime</th>
+                      <th>Adresa</th>
+                      <th>Telefon</th>
+                      <th>Email</th>
+                      <th>Odobri</th>
+                      <th>Odbij</th>
+                  </tr>
+                  <tr *ngFor="let v of vlasniciWaiting">
+                      <td>{{v.korisnickoIme}}</td>
+                      <td>{{v.ime}}</td>
+                      <td>{{v.prezime}}</td>
+                      <td>{{v.adresa}}</td>
+                      <td>{{v.telefon}}</td>
+                      <td>{{v.email}}</td>
+                      <td class="accept-deny">
+                        <button (click)="acceptOwner(v)">Odobri</button>
+                      </td>
+                      <td class="accept-deny">
+                        <button (click)="denyOwner(v)">Odbij</button>
+                      </td>
+                  </tr>
+                </table>
+            </div>
+      
+          </section>
+
+          <section class="add-content">
+            <h2><a routerLink="/noviDekorater">Registruj novog dekoratera</a></h2>
+            <h2><a routerLink="/novaFirma">Registruj novu firmu</a></h2>
+          </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vaša mašta - vaša bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

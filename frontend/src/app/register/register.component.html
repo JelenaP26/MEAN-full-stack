@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Login</title>
+    <link rel="stylesheet" href="register.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a routerLink="" class="back-link">
+                <span class="arrow"></span>
+                <h4>Vrati se na početnu stranicu</h4>
+            </a>
+            <h1>Registracija</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="register-section">
+            <div class="container">
+                <h3>Postanite naš novi korisnik</h3>
+                <form>
+                    <label for="korisnickoImeReg">Korisničko ime:</label>
+                    <input type="text" name="korisnickoImeReg" [(ngModel)]="korisnickoImeReg" placeholder="Unesite korisničko ime">
+                    <br>
+                    <label for="lozinkaReg">Lozinka:</label>
+                    <input type="password" name="lozinkaReg"[(ngModel)]="lozinkaReg" placeholder="Unesite lozinku">
+                    <br>
+                    <label for="ponovljenaLozinkaReg">Ponovljena lozinka:</label>
+                    <input type="password" name="ponovljenaLozinkaReg"[(ngModel)]="ponovljenaLozinkaReg" placeholder="Ponovite lozinku">
+                    <br>
+                    <label for="imeReg">Ime:</label>
+                    <input type="text" name="imeReg" [(ngModel)]="imeReg" placeholder="Unesite ime">
+                    <br>
+                    <label for="prezimeReg">Prezime:</label>
+                    <input type="text" name="prezimeReg" [(ngModel)]="prezimeReg" placeholder="Unesite prezime">
+                    <br>
+                    <label for="adresaReg">Adresa:</label>
+                    <input type="text" name="adresaReg" [(ngModel)]="adresaReg" placeholder="Unesite adresu">
+                    <br>
+                    <label>Pol:</label>
+                      <div>
+                          <label>
+                              <input type="radio" name="polReg" value="M" [(ngModel)]="polReg"> M
+                          </label>
+                          <label>
+                              <input type="radio" name="polReg" value="Z" [(ngModel)]="polReg"> Ž
+                          </label>
+                      </div>
+                    <br>  
+                    <label for="telefonReg">Telefon:</label>
+                    <input type="text" name="telefonReg" [(ngModel)]="telefonReg" placeholder="Unesite kontakt telefon">
+                    <br>
+                    <label for="emailReg">Email:</label>
+                    <input type="email" name="emailReg" [(ngModel)]="emailReg" placeholder="Unesite email">
+                    <br>
+                    <label for="profilnaSlikaReg">Profilna slika:</label>
+                    <input type="file" id="profilnaSlikaReg" name="profilnaSlikaReg" (change)="onFileChange($event)" accept="image/jpeg, image/png">
+                        <div class="profile-preview">
+                            <img [src]="profilnaSlikaReg || '../../assets/defaultImage-100x100.jpg'" alt="Profilna slika preview">
+                        </div>
+                    <br>
+                    <label for="brojKarticeReg">Broj kreditne kartice:</label>
+                    <input type="text" name="brojKarticeReg" [(ngModel)]="brojKarticeReg" (input)="updateCardIcon(brojKarticeReg)" placeholder="Unesite broj kreditne kartice">
+                    <div id="card-icon" [ngClass]="cardIconClass"></div>
+                    <!-- <div class="card_container" id="cardImageContainer">
+                        <img id="slikaKartice" src="" alt="" style="display: none;">
+                    </div> -->
+                    <br>
+                    <button type="button" (click)="register()">Registruj se</button>
+                </form>
+                <hr>
+                <div class="registration-error">{{errorReg}}</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Moja Bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

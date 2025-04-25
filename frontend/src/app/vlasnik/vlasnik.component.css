@@ -1,0 +1,200 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f4; /* Svetlo pastelna zelena pozadina */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+  }
+  .main-nav {
+    margin-top: 0.5rem;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .main-nav a:hover {
+    background-color: #45a049;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  .profile {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 2rem;
+    object-fit: cover;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .info p {
+    margin: 0.5rem 0;
+  }
+  
+  .btn-edit {
+    background-color: #c2d6c3; /* Pastelno zelena boja */
+    color: #2e5d2f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-edit:hover {
+    background-color: #45a049;
+  }
+  
+  .section-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  
+/* Footer stilovi */
+.footer {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .profile-edit {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  
+  .profile-edit form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-edit label {
+    margin-top: 0.5rem;
+  }
+
+  
+  .profile-edit input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .profile-edit button {
+    background-color: #4caf50; /* Pastelno zelena boja */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+  
+  .profile-edit button:hover {
+    background-color: #45a049;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .password-change {
+    background-color: transparent; /* Transparentna pozadina */
+    border: none; /* Uklanja ivice oko kontejnera */
+    box-shadow: none; /* Uklanja senku */
+    padding: 0; /* Uklanja padding unutar kontejnera */
+    margin: 0; /* Uklanja marginu */
+  }
+  
+  .password-change h3 {
+    margin-top: 0;
+  }
+  
+  .password-change form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .password-change label {
+    margin-top: 0.5rem;
+  }
+  
+  .password-change input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .password-change button {
+    background-color: #4caf50; /* Pastelno zelena boja */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  
+  .password-change button:hover {
+    background-color: #45a049;
+  }
+  
+  .password-change-error {
+    color: red;
+    margin-top: 1rem;
+  }
+  

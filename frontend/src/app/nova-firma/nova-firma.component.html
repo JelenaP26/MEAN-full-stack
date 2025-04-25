@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Login</title>
+    <link rel="stylesheet" href="nova-firma.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a routerLink="" class="back-link">
+                <span class="arrow"></span>
+                <h4>Vrati se na početnu stranicu</h4>
+            </a>
+            <h1>Dodaj novu firmu</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="register-section">
+            <div class="container">
+                <!-- <h3>Postanite naš novi korisnik</h3> -->
+                <form>
+                    <label for="naziv">Naziv:</label>
+                    <input type="text" name="naziv" [(ngModel)]="naziv" placeholder="Unesite naziv">
+                    <br>
+                    <label for="adresa">Adresa:</label>
+                    <input type="text" name="adresa" [(ngModel)]="adresa" placeholder="Unesite adresu">
+                    <br>
+                    <label for="usluge">Usluge:</label>
+                    <input type="text" name="usluge" [(ngModel)]="usluge" placeholder="Unesite 'naziv - cena', odvojene zarezom">
+                    <br>
+                    <label for="dekorateri">Dekorateri: </label>
+                    <div *ngFor="let d of dekorateri">
+                        <input type="checkbox" name="d.checked" [(ngModel)]="d.checked">{{d.ime}} {{d.prezime}}
+                      </div>
+                    <br>
+                    <label for="telefon">Telefon:</label>
+                    <input type="text" name="telefon" [(ngModel)]="telefon" placeholder="Unesite kontakt telefon">
+                    <br>
+                    <button type="button" (click)="addNewFirm()">Dodaj novu firmu</button>
+                </form>
+                <hr>
+                <div class="registration-error">{{error}}</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vaša mašta - vaša bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

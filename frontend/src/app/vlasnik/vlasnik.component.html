@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="vlasnik.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="#profil" routerLink="/vlasnik"><u>Profil</u></a>
+      <a href="#firme" routerLink="/vlasnikFirme">Firme</a>
+      <a href="#zakazivanja" routerLink="/vlasnikZakazivanja">Zakazivanja</a>
+      <a href="#odrzavanje" routerLink="/vlasnikOdrzavanje">Održavanje</a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="profil" class="profile">
+      <h2>Profil Vlasnika</h2>
+      <div class="profile-info">
+        <img src={{ulogovan.profilnaSlika}} alt="Profilna Slika" class="profile-picture">
+        <div class="info">
+          <p><strong>Korisničko ime: </strong> <span id="username">{{ulogovan.korisnickoIme}}</span></p>
+          <p><strong>Ime: </strong> <span id="firstName">{{ulogovan.ime}}</span></p>
+          <p><strong>Prezime: </strong> <span id="lastName">{{ulogovan.prezime}}</span></p>
+          <p><strong>Adresa: </strong> <span id="address">{{ulogovan.adresa}}</span></p>
+          <p><strong>Email: </strong> <span id="email">{{ulogovan.email}}</span></p>
+          <p><strong>Telefon: </strong> <span id="phone">{{ulogovan.telefon}}</span></p>
+          <p><strong>Broj kreditne kartice: </strong> <span id="cardNumber">{{ulogovan.brojKartice}}</span></p>
+        </div>
+
+        <div class="password-change">
+          <h3>Želim da promenim svoju lozinku</h3>
+          <form>
+            <label for="trenutnaLozinka">Trenutna lozinka:</label>
+            <input type="password" [(ngModel)]="trenutnaLozinka" name="trenutnaLozinka" placeholder="Unesite trenutnu lozinku">
+            <label for="novaLozinka">Nova lozinka:</label>
+            <input type="password" [(ngModel)]="novaLozinka" name="novaLozinka" placeholder="Unesite novu lozinku">
+            <label for="novaLozinkaPonovljena">Potvrdi novu lozinku:</label>
+            <input type="password" [(ngModel)]="novaLozinkaPonovljena" name="novaLozinkaPonovljena" placeholder="Unesite ponovo novu lozinku" required>
+            <button type="submit" (click)="changePassword()">Promeni lozinku</button>
+          </form>
+          <div class="password-change-error">{{ passwordChangeError }}</div>
+        </div>
+
+      </div>
+
+      <button class="btn-edit" (click)="change()">Izmeni Profil</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f4; /* Svetlo pastelna zelena pozadina */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+  }
+  .main-nav {
+    margin-top: 0.5rem;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .main-nav a:hover {
+    background-color: #45a049;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+
+  .info {
+    flex: 1;
+  }
+  
+  .info p {
+    margin: 0.5rem 0;
+  }
+
+  .btn-edit {
+    background-color: #c2d6c3; /* Pastelno zelena boja */
+    color: #2e5d2f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-edit:hover {
+    background-color: #45a049;
+  }
+
+  .section-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  /* Footer stilovi */
+.footer {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px; /* Visina dijagrama */
+  }
+  
+  .chart {
+    display: flex;
+    align-items: flex-end; /* Poravnanje na dnu */
+    height: 100%; /* Maksimalna visina */
+    gap: 10px; /* Razmak između kolona */
+  }
+  
+  .bar {
+    width: 40px;
+    background-color: #4CAF50; /* Boja kolone */
+    text-align: center;
+    color: white;
+    transition: height 0.5s;
+    position: relative; /* Potrebno za apsolutno pozicioniranje vrednosti */
+  }
+  
+  .bar-value {
+    position: absolute;
+    bottom: 100%; /* Iznad kolone */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px; /* Veličina fonta za vrednosti */
+  }
+  
+  .x-axis {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Da zauzme celu širinu */
+    margin-top: 10px; /* Razmak iznad X ose */
+  }
+  
+  .x-axis span {
+    font-size: 12px; /* Veličina fonta za mesece */
+  }
+
+  .pie-chart {
+    position: relative;
+    width: 300px; /* Širina dijagrama */
+    height: 300px; /* Visina dijagrama */
+    border-radius: 50%; /* Oblik pite */
+    overflow: hidden;
+  }
+  
+  .slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 0% 0%, 0% 100%); /* Oblik svake kriške */
+  }
+  
+  .slice-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  
+  .slice-label {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+  }
+  

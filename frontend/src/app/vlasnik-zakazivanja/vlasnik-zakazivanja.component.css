@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f4; /* Svetlo pastelna zelena pozadina */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+  }
+  .main-nav {
+    margin-top: 0.5rem;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .main-nav a:hover {
+    background-color: #45a049;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+
+  .info {
+    flex: 1;
+  }
+  
+  .info p {
+    margin: 0.5rem 0;
+  }
+
+  .btn-edit {
+    background-color: #c2d6c3; /* Pastelno zelena boja */
+    color: #2e5d2f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-edit:hover {
+    background-color: #45a049;
+  }
+
+  .section-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .archive-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    /* max-width: 1000px; */
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Uklanja razmake između granica ćelija */
+    margin: 1rem 0; /* Dodaje marginu oko tabele */
+  }
+  
+  /* Stil za zaglavlje tabele */
+  th {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 1rem;
+    text-align: left; /* Poravnava tekst levo */
+    border-bottom: 2px solid #2e5d2f; /* Dodaje donju granicu */
+  }
+  
+  /* Stil za ćelije u tabeli */
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd; /* Dodaje donju granicu */
+  }
+  
+  /* Stil za parne redove tabele */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Svetla siva boja za parne redove */
+  }
+  
+  /* Stil za neparne redove tabele */
+  tr:nth-child(odd) {
+    background-color: #ffffff; /* Bela boja za neparne redove */
+  }
+  
+  /* Stil za redove tabele pri prelaženju mišem */
+  tr:hover {
+    background-color: #e2e8e0; /* Svetla pastelna zelena za hover efekat */
+  }
+  
+  /* Stil za listu unutar ćelije */
+  td ul {
+    padding-left: 1rem; /* Dodaje levo odstojanje za listu */
+    margin: 0; /* Uklanja marginu oko liste */
+    list-style-type: none; /* Uklanja oznake (bullet points) sa liste */
+  }
+  
+  /* Stil za stavke liste */
+  td ul li {
+    padding: 0.5rem 0; /* Dodaje vertikalno odstojanje između stavki */
+  }
+
+  /* Footer stilovi */
+.footer {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .comment-rate button {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%; /* Da dugmići zauzmu punu širinu */
+}
+
+.comment-rate button:hover {
+    background-color: #45a049;
+}

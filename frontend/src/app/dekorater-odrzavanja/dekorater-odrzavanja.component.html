@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="dekorater-odrzavanja.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a routerLink="/dekorater">Profil</a>
+      <a routerLink="/dekoraterZakazivanja">Zakazivanja</a>
+      <a routerLink="/dekoraterOdrzavanja"><u>Održavanja</u></a>
+      <a routerLink="/dekoraterStatistika">Statistika</a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+
+  <main>
+    
+
+    <section id="firme" class="section-content">
+        <div class="table-container">
+            <h2>Trenutni zahtevi za održavanje vodenih površina</h2>
+            <table>
+              <tr>
+                  <th>Datum i vreme zakazivanja</th>
+                  <th>Datum i vreme izrade</th>
+                  <!-- <th>Datum i vreme završetka</th> -->
+                  <th>Tip bašte</th>
+                  <th>Ukupna kvadratura</th>
+                  <!-- <th>Izabrane usluge</th> -->
+                  <th>Dodatni zahtevi</th>
+                  <th>Procenjeno vreme završetka</th>
+                  <th>Potvrdi</th>
+                  <th>Odbij</th>
+              </tr>
+              <tr *ngFor="let o of odrzavanja">
+                <td>{{o.datumVremeZakazivanja}}</td>
+                <td>{{o.datumVremeIzrade}}</td>
+                <td>{{o.tipBaste}}</td>
+                <td>{{o.ukupnaKvadratura}}</td>
+                <td>{{o.dodatniZahtevi}}</td>
+                <td>
+                  <input type="datetime-local" [(ngModel)]="o.datumVremeZavrsetka" required>
+                </td>
+                <td  class="accept-deny">
+                  <button (click)="acceptWaterService(o)">Potvrdi</button>
+                </td>
+                <td class="accept-deny">
+                  <button (click)="denyWaterService(o)">Odbij</button>
+                </td>
+              </tr>
+            </table>
+            <p class="error">{{this.error}}</p>
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Profile</title>
+    <link rel="stylesheet" href="change-profile.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a routerLink="/vlasnik" class="back-link">
+                <span class="arrow"></span>
+                <h4>Vrati se na prethodnu stranicu</h4>
+            </a>
+            <h1>Dobro došli na stranicu za izmenu vašeg profila</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="change-profile-section">
+            <div class="container">
+                <h3>Unesite podatke koje želite da izmenite</h3>
+                <form>
+                    <label for="korisnickoIme">Korisničko ime:</label>
+                    <input type="text" name="korisnickoIme" [(ngModel)]="korisnickoIme" placeholder="Unesite korisničko ime">
+                    <br>
+                    <label for="ime">Ime:</label>
+                    <input type="text" name="ime" [(ngModel)]="ime" placeholder="Unesite ime">
+                    <br>
+                    <label for="prezime">Prezime:</label>
+                    <input type="text" name="prezime" [(ngModel)]="prezime" placeholder="Unesite prezime">
+                    <br>
+                    <label for="adresa">Adresa:</label>
+                    <input type="text" name="adresa" [(ngModel)]="adresa" placeholder="Unesite adresu">
+                    <br>
+                    <label for="telefon">Telefon:</label>
+                    <input type="text" name="telefon" [(ngModel)]="telefon" placeholder="Unesite kontakt telefon">
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" [(ngModel)]="email" placeholder="Unesite email">
+                    <br>
+                    <label for="profilnaSlika">Profilna slika:</label>
+                    <input type="file" id="profilnaSlika" name="profilnaSlika" (change)="onFileChange($event)" accept="image/jpeg, image/png">
+                        <div class="profile-preview">
+                            <img [src]="profilnaSlika || '../../assets/defaultImage-100x100.jpg'" alt="Profilna slika preview">
+                        </div>
+                    <br>
+                    <label for="brojKartice">Broj kreditne kartice:</label>
+                    <input type="text" name="brojKartice" [(ngModel)]="brojKartice" (input)="updateCardIcon(brojKartice)" placeholder="Unesite broj kreditne kartice">
+                    <div id="card-icon" [ngClass]="cardIconClass"></div>
+                    <!-- <div class="card_container" id="cardImageContainer">
+                        <img id="slikaKartice" src="" alt="" style="display: none;">
+                    </div> -->
+                    <br>
+                    <button type="button" (click)="changeProfile()">Potvrdi izmene</button>
+                </form>
+                <hr>
+                <div class="change-profile-error">{{errorReg}}</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Moja Bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranica Vlasnik</title>
+  <link rel="stylesheet" href="dekorater-statistika.component.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <h1>Vaša mašta - vaša bašta</h1>
+    </div>
+    <nav class="main-nav">
+      <a routerLink="/dekorater">Profil</a>
+      <a routerLink="/dekoraterZakazivanja">Zakazivanja</a>
+      <a routerLink="/dekoraterOdrzavanja">Održavanja</a>
+      <a routerLink="/dekoraterStatistika"><u>Statistika</u></a>
+      <a routerLink="">Vrati se na početnu stranu</a>
+      <button class="btn-edit" (click)="logout()">Izloguj se</button>
+    </nav>
+  </header>
+
+
+  <main>
+    
+    <section id="firme" class="section-content">
+      <h2>Broj poslova po mesecima</h2>
+      <div class="chart-container">
+        <div class="chart">
+          <div class="bar" *ngFor="let month of barChartData.labels; let i = index" [style.height]="barChartData.datasets[0].data[i] * 10 + 'px'">
+            <span class="bar-value">{{ barChartData.datasets[0].data[i] }}</span>
+          </div>
+        </div>
+        <div class="x-axis">
+          <span *ngFor="let month of barChartData.labels">{{ month }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="zakazivanja" class="section-content">
+      <h2>Raspodela svih poslova medju dekoraterima unutar firme</h2>
+      Dodajte sadržaj za "Zakazivanja" ovde
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vaša mašta - vaša bašta. Sva prava zadržana.</p>
+  </footer>
+</body>
+</html>

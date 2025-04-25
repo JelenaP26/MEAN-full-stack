@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša mašta - vaša bašta</title>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Vaša mašta - vaša bašta</h1>
+            <p>Pronađite inspiraciju za svoju savršenu baštu</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="flex-container">
+        <section class="login-section">
+            <div class="container">
+                <h2>Ulogujte se kao vlasnik ili dekorater:</h2>
+                <form>
+                    <label for="korisnickoIme">Korisničko ime:</label>
+                    <input type="text" name="korisnickoIme" [(ngModel)]="korisnickoIme" placeholder="Unesite korisničko ime">
+                    <br>
+                    <label for="lozinka">Lozinka:</label>
+                    <input type="password" name="lozinka" [(ngModel)]="lozinka" placeholder="Unesite lozinku">
+                    <br>
+                    <button type="button" (click)="login()">Uloguj se</button>
+                </form>
+                <hr>
+                <a routerLink="/adminLogin">Ulogujte se kao administrator</a>
+                <!-- <br> -->
+                <a routerLink="/register">Nemate nalog? Registrujte se kao vlasnik kuće ili restorana</a>
+                <div class="error">{{error}}</div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2><u>Opšte informacije</u></h2>
+            <div class="info">
+                <br>
+                <p><strong>Ukupan broj dekorisanih bašti: </strong> <span>{{zavrseniPoslovi}}</span></p>
+                <br>
+                <p><strong>Ukupan broj registrovanih vlasnika: </strong>{{vlasnici}}</p>
+                <br>
+                <p><strong>Ukupan broj registrovanih dekoratera: </strong>{{dekorateri}}</p>
+                <br>
+                <p><strong>Broj zakazanih poslova u poslednjih 24 sata: </strong>{{zakazivanja24h}}</p>
+                <br>
+                <p><strong>Broj zakazanih poslova u poslednjih 7 dana: </strong>{{zakazivanja7dana}}</p>
+                <br>
+                <p><strong>Broj zakazanih poslova u poslednjih 30 dana: </strong>{{zakazivanja30dana}}</p>
+
+            </div>
+        </section>
+    </div>
+
+    <section id="firme" class="section-content">
+        <!-- <div class="content-container"> -->
+          <div class="table-container">
+            <h2>Firme</h2>
+            <table>
+              <tr>
+                  <th>Naziv</th>
+                  <th>Adresa</th>
+                  <th>Angažovani dekorateri</th>
+              </tr>
+              <tr *ngFor="let f of firme">
+                  <td>{{f.naziv}}</td>
+                  <td>{{f.adresa}}</td>
+                  <td>
+                      <ul>
+                          <li *ngFor="let d of f.dekorateri" [hidden]="d.angazovan != true">{{d.ime}} {{d.prezime}}</li>
+                      </ul>
+                  </td>
+              </tr>
+            </table>
+        </div>
+  
+        <div class="search-container">
+          <h3>Pretraži i sortiraj</h3>
+          <button (click)="sortByNameAsc()">Sortiraj neopadajuće po nazivu</button>
+          <br>
+          <button (click)="sortByAddrAsc()">Sortiraj neopadajuće po adresi</button>
+          <br>
+          <button (click)="sortByNameDesc()">Sortiraj nerastuće po nazivu</button>
+          <br>
+          <button (click)="sortByAddrDesc()">Sortiraj nerastuće po adresi</button>
+          <br>
+          <label for="search">Unesi naziv firme i/ili adresu: </label>
+          <input type="text" name="search" [(ngModel)]="searchByName" placeholder="Unesi naziv firme:">
+          <!-- <br> -->
+          <input type="text" name="search" [(ngModel)]="searchByAddr" placeholder="Unesi adresu firme:">
+          <br>
+          <button (click)="searchFirm()">Pretraži</button>
+          <br>
+          <button (click)="ngOnInit()">Prikaži opet sve firme</button>
+          <br>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Vaša mašta - vaša bašta</p>
+        </div>
+    </footer>
+</body>
+</html>

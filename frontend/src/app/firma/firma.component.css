@@ -1,0 +1,168 @@
+/* Opšti stilovi */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4; 
+}
+
+/* Header stilovi */
+.header {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Raspored za main sekciju */
+main {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    padding: 15px;
+}
+
+.section-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+/* Stil za sve firm-section */
+.firm-section {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+/* Širina i pozadinska boja za sekciju "O nama" */
+.firm-section.info {
+    width: 30%; /* Širina za sekciju "O nama" */
+    height: 100%; /* Uklanja visinu da se ne širi sa drugim sekcijama */
+    overflow: auto; /* Omogućava skrolovanje ako je potrebno */
+    /* margin: 2rem auto; */
+}
+
+/* Širina i pozadinska boja za sekciju "Zakazivanje" */
+.firm-section.booking {
+    width: 40%; /* Širina za sekciju "Zakazivanje" */
+    /* margin: 2rem auto; */
+}
+
+/* Stil za header linkove */
+.back-link {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+    color: #854992;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.back-link .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid #854992; /* Strelica pokazuje ulevo */
+    margin-right: 5px;
+}
+
+.back-link h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Footer stilovi */
+.footer {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.steps-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.steps-nav button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2e5d2f;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.steps-nav button:hover {
+    background-color: #1d4d1a;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.error {
+    color: red;
+}
+
+
+.main-nav {
+    /* margin: -10px; */
+    margin-top: 0.5rem;
+    float: right;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .main-nav a:hover {
+    background-color: #45a049;
+  }
+
+  .btn-edit {
+    background-color: #c2d6c3; /* Pastelno zelena boja */
+    color: #2e5d2f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top: -30px;
+    left: -25px;
+  }
+  
+  .btn-edit:hover {
+    background-color: #45a049;
+  }
+

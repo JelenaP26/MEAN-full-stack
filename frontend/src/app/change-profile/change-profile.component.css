@@ -1,0 +1,172 @@
+/* Opšti stilovi */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4; /* Svetla pozadina */
+}
+
+/* Header stilovi */
+.header {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Sekcija za registraciju */
+.change-profile-section {
+    background-color: #e0f0e0; /* Svetla pastelna zelena */
+    padding: 40px 0;
+  }
+  
+  .change-profile-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .change-profile-section h3 {
+    text-align: center;
+    color: #2e5d2f;
+  }
+  
+  .change-profile-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .change-profile-section label {
+    font-weight: bold;
+  }
+  
+  .change-profile-section input[type="text"],
+  .change-profile-section input[type="password"],
+  .change-profile-section input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .change-profile-section button {
+    background-color: #2e5d2f; /* Tamnija zelena */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .change-profile-section button:hover {
+    background-color: #1d4d1a; /* Još tamnija zelena za hover */
+  }
+  
+  .change-profile-error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Footer stilovi */
+.footer {
+    background-color: #c2d6c3; /* Pastelno zelena */
+    color: #2e5d2f; /* Tamnija zelena za tekst */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+    color: #854992;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.back-link .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid #854992; /* Strelica pokazuje ulevo */
+    margin-right: 5px;
+}
+
+.back-link h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.profile-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Maksimalna širina kontejnera */
+    height: 300px; /* Maksimalna visina kontejnera */
+    background-color: #f0f8f0; /* Pozadina za kontejner */
+    border: 1px solid #ddd; /* Opcionalno: okvir oko kontejnera */
+    margin-bottom: 20px; /* Razmak između slike i drugih elemenata */
+    overflow: hidden; /* Sakrij deo slike koji izlazi izvan kontejnera */
+}
+
+.profile-preview img {
+    max-width: 100%; /* Maksimalna širina slike */
+    max-height: 100%; /* Maksimalna visina slike */
+    width: auto; /* Automatsko prilagođavanje širine */
+    height: auto; /* Automatsko prilagođavanje visine */
+    object-fit: cover; /* Popunjava ceo kontejner obrezivanjem slike ako je potrebno */
+    object-position: center; /* Centriranje slike unutar kontejnera */
+}
+
+/* .card_container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#cardImage {
+  width: 100px; /* Prilagodite veličinu prema potrebi */
+  /* height: auto; */
+  /* margin-top: 20px; */
+/* } */ 
+
+.card-icon {
+  width: 120px; /* Širina ikone kartice */
+  height: 72px; /* Visina ikone kartice */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block; /* Pokaži div kao inline blok */
+}
+
+.card-icon.visa {
+  background-image: url('../../assets/visa.png');
+}
+
+.card-icon.mastercard {
+  background-image: url('../../assets/mastercard.png');
+}
+
+.card-icon.diners {
+  background-image: url('../../assets/diners.png');
+}
